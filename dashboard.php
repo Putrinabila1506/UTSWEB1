@@ -83,6 +83,7 @@ if (!isset($_SESSION['username'])) {
 
     <?php
     // ===== Commit 5 – Setup Awal Dashboard Penjualan =====
+<<<<<<< HEAD
     $kode_barang = ["BARANG1", "BARANG2", "BARANG3", "BARANG4", "BARANG5"];
     $nama_barang = ["Golda", "Teh Sosro", "Indomie Kuah", "Susu Milo", "Waffer nabati"];
     $harga_barang = [5000, 4000, 7000, 5000, 5000];
@@ -92,6 +93,17 @@ if (!isset($_SESSION['username'])) {
         ["kode" => "BARANG1", "nama" => "Golda", "harga" => 5000, "jumlah" => 3],
         ["kode" => "BARANG3", "nama" => "Indomie Kuah", "harga" => 7000, "jumlah" => 5],
         ["kode" => "BARANG5", "nama" => "Waffer Nabati", "harga" => 5000, "jumlah" => 2],
+=======
+    $kode_barang = ["BARANG01", "BARANG02", "BARANG03", "BARANG04", "BARANG05"];
+    $nama_barang = ["Kopi Kapal Api", "Teh Sosro", "Indomie Goreng", "Susu Indomilk", "Chitato"];
+    $harga_barang = [5000, 4000, 3500, 8000, 10000];
+
+    // ===== Commit 7 – Perhitungan Total =====
+    $pembelian = [
+        ["kode" => "BARANG01", "nama" => "Kopi Kapal Api", "harga" => 5000, "jumlah" => 3],
+        ["kode" => "BARANG03", "nama" => "Indomie Goreng", "harga" => 3500, "jumlah" => 5],
+        ["kode" => "BARANG05", "nama" => "Chitato", "harga" => 10000, "jumlah" => 2],
+>>>>>>> 52bdaf8cbfa7b6e29880b7f3a1facde88d8e969e
     ];
 
     echo "<h2 style='text-align:center;'>Detail Pembelian</h2>";
@@ -146,4 +158,8 @@ if (!isset($_SESSION['username'])) {
 
     <a class="logout" href="logout.php">Logout</a>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 52bdaf8cbfa7b6e29880b7f3a1facde88d8e969e

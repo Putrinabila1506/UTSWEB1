@@ -1,11 +1,17 @@
 <?php
 session_start();
+<<<<<<< HEAD
 include "koneksi.php";
 
+=======
+
+// Jika user sudah login, langsung ke dashboard
+>>>>>>> 52bdaf8cbfa7b6e29880b7f3a1facde88d8e969e
 if (isset($_SESSION['username'])) {
     header("Location: dashboard.php");
     exit;
 }
+<<<<<<< HEAD
 $error='';
 if (isset($_POST['x']) && isset($_POST['y'])) {
     $username = $_POST['x'];
@@ -28,6 +34,26 @@ if (isset($_POST['x']) && isset($_POST['y'])) {
     }
 }
 ?>
+=======
+
+// Proses login saat form dikirim
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    // Login statis
+    if ($username === 'admin' && $password === '1234') {
+        $_SESSION['username'] = $username;
+        $_SESSION['role'] = 'Admin';
+        header("Location: dashboard.php");
+        exit;
+    } else {
+        $error = "⚠️ Username atau password salah!";
+    }
+}
+?>
+
+>>>>>>> 52bdaf8cbfa7b6e29880b7f3a1facde88d8e969e
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -86,13 +112,24 @@ if (isset($_POST['x']) && isset($_POST['y'])) {
         <?php if (!empty($error)) echo "<p class='error'>$error</p>"; ?>
         <form method="post" action="">
             <label>Username:</label>
+<<<<<<< HEAD
             <input type="text" name="x" required placeholder="Masukkan username">
 
             <label>Password:</label>
             <input type="password" name="y" required placeholder="Masukkan password">
+=======
+            <input type="text" name="username" required placeholder="Masukkan username">
+
+            <label>Password:</label>
+            <input type="password" name="password" required placeholder="Masukkan password">
+>>>>>>> 52bdaf8cbfa7b6e29880b7f3a1facde88d8e969e
 
             <button type="submit">Login</button>
         </form>
     </div>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 52bdaf8cbfa7b6e29880b7f3a1facde88d8e969e
